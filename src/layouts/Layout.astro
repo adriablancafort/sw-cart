@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Nanostore Preact Cart</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  .skeleton {
+    background: linear-gradient(110deg, #f3f4f6 40%, #ffffff 50%, #f3f4f6 60%);
+    background-size: 200%;
+    background-position: right 50px top 0;
+    animation: skeleton-loading 1s ease infinite;
+  }
+
+  @keyframes skeleton-loading {
+    to {
+      background-position: left 50px top 0;
+    }
+  }
+</style>
+
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("/sw.js");
+    });
+  }
+</script>

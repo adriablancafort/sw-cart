@@ -1,0 +1,19 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Cart from "../components/Cart";
+import Products from "../components/Products";
+---
+
+<Layout>
+    <main style="display: flex;">
+      <div>
+        <h2>Products</h2>
+        <Products client:load />
+      </div>
+
+      <div>
+        <h2>Cart</h2>
+        <Cart client:load transition:persist />
+      </div>
+    </main>
+</Layout>
